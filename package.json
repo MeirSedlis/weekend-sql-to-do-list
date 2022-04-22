@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/MeirSedlis/weekend-sql-to-do-list/issues"
   },
-  "homepage": "https://github.com/MeirSedlis/weekend-sql-to-do-list#readme"
+  "homepage": "https://github.com/MeirSedlis/weekend-sql-to-do-list#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "pg": "^8.7.3"
+  }
 }
