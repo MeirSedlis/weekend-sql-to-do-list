@@ -4,7 +4,7 @@ CREATE TABLE "tasks"(
 "dueDate" DATE,
 "importance" INT CHECK ("importance"<=5 AND "importance" >0),
 "description" VARCHAR (500),
-"complete" BOOLEAN
+"complete" BOOLEAN DEFAULT FALSE
 );
 
 SELECT * FROM "tasks";
