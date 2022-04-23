@@ -54,23 +54,23 @@ router.post('/',  (req, res) => {
 //   })
 
 //DELETE
-router.delete('/:taskId', (req, res) => {
-    // We can access the value that was supplied
-    // to this route parameter by:
-    let taskToDelete = req.params.taskId;
-    let sqlQuery = `
-      DELETE FROM "tasks"
-        WHERE "id"=$1;
-    `
-    let sqlValues = [taskToDelete];
-    pool.query(sqlQuery, sqlValues)
-      .then((dbResult) => {
-        res.sendStatus(200);
-      })
-      .catch((dbError) => {
-        console.log('error in DELETE /tasks db request:');
-        res.sendStatus(500);
-      })
-  })
+// router.delete('/:taskId', (req, res) => {
+//     // We can access the value that was supplied
+//     // to this route parameter by:
+//     let taskToDelete = req.params.taskId;
+//     let sqlQuery = `
+//       DELETE FROM "tasks"
+//         WHERE "id"=$1;
+//     `
+//     let sqlValues = [taskToDelete];
+//     pool.query(sqlQuery, sqlValues)
+//       .then((dbResult) => {
+//         res.sendStatus(200);
+//       })
+//       .catch((dbError) => {
+//         console.log('error in DELETE /tasks db request:');
+//         res.sendStatus(500);
+//       })
+//   })
 
 module.exports = router;
