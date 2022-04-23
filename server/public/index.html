@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/server/public/vendors/jquery.js"></script>
-    <script src="/server/public/scripts/client.js"></script>
+    <script src="/vendors/jquery.js"></script>
+    <script src="/scripts/client.js"></script>
     <link rel="stylesheet" href="css/style.css">   
     <title>To-Do To-Day</title>
 </head>
 <body>
     <h1>Meir's Fantastic To Do App!</h1>
-    <div>
+    <section>
         <input id="taskInput" type="text" placeholder="Task">
         <input id="dueInput" type="date" placeholder="Due Date">
         <select id="importanceInput">
@@ -20,6 +20,23 @@
             <option value="3">High Importance</option>
         <input id="descriptionInput" type="text" placeholder="Description">
         <button id="addTaskButton">Add Task</button>
-    </div>
+    </section>
+    <section>
+        <div>
+          <h3>Tasks</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Due Date</th>
+                <th>Importance</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody id="taskList">
+            </tbody>
+          </table>
+        </div>
+      </section>
 </body>
 </html>

@@ -33,42 +33,42 @@ router.post('/',  (req, res) => {
   });
 
 // PUT
-// router.put('/:bookId', (req, res) => {
+// router.put('/:taskId', (req, res) => {
 //     let sqlQuery = `
-//       UPDATE "books"
-//         SET "isRead"=$1
+//       UPDATE "tasks"
+//         SET "complete"=$1
 //         WHERE "id"=$2;
 //     `;
 //     let sqlValues = [
 //         true,
-//       req.params.bookId
+//       req.params.taskId
 //     ]
 //     pool.query(sqlQuery, sqlValues)
 //       .then((dbResult) => {
 //         res.sendStatus(200);
 //       })
 //       .catch((dbError) => {
-//         console.log('error in PUT /books db request:');
+//         console.log('error in PUT /task db request:');
 //         res.sendStatus(500);
 //       })
 //   })
 
 //DELETE
-// router.delete('/:bookId', (req, res) => {
+// router.delete('/:taskId', (req, res) => {
 //     // We can access the value that was supplied
 //     // to this route parameter by:
-//     let bookToDelete = req.params.bookId;
+//     let taskToDelete = req.params.taskId;
 //     let sqlQuery = `
-//       DELETE FROM "books"
+//       DELETE FROM "tasks"
 //         WHERE "id"=$1;
 //     `
-//     let sqlValues = [bookToDelete];
+//     let sqlValues = [taskToDelete];
 //     pool.query(sqlQuery, sqlValues)
 //       .then((dbResult) => {
 //         res.sendStatus(200);
 //       })
 //       .catch((dbError) => {
-//         console.log('error in DELETE /books db request:');
+//         console.log('error in DELETE /tasks db request:');
 //         res.sendStatus(500);
 //       })
 //   })
