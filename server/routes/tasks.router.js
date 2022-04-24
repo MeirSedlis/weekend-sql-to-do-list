@@ -5,7 +5,7 @@ const pool = require('../modules/pool');
 
 // GET
 router.get('/', (req, res) => {
-    let queryText = 'SELECT * FROM "tasks" ORDER BY "importance";';
+    let queryText = 'SELECT * FROM "tasks" ORDER BY "dueDate";';
     pool.query(queryText).then(result => {
       res.send(result.rows);
     })
@@ -33,25 +33,25 @@ router.post('/',  (req, res) => {
   });
 
 // PUT
-// router.put('/:taskId', (req, res) => {
-//     let sqlQuery = `
-//       UPDATE "tasks"
-//         SET "complete"=$1
-//         WHERE "id"=$2;
-//     `;
-//     let sqlValues = [
-//         true,
-//       req.params.taskId
-//     ]
-//     pool.query(sqlQuery, sqlValues)
-//       .then((dbResult) => {
-//         res.sendStatus(200);
-//       })
-//       .catch((dbError) => {
-//         console.log('error in PUT /task db request:');
-//         res.sendStatus(500);
-//       })
-//   })
+router.put('/:taskId', (req, res) => {
+    let sqlQuery = `
+      UPDATE "tasks"
+        SET "complete"=$1
+        WHERE "id"=$2;
+    `;
+    let sqlValues = [
+        true,
+      req.params.taskId
+    ]
+    pool.query(sqlQuery, sqlValues)
+      .then((dbResult) => {
+        res.sendStatus(200);
+      })
+      .catch((dbError) => {
+        console.log('error in PUT /task db request:');
+        res.sendStatus(500);
+      })
+  })
 
 //DELETE
 router.delete('/:taskId', (req, res) => {
