@@ -76,6 +76,7 @@ function renderTasks(tasks) {
       <td>${task.dueDate}</td>
       <td>${task.description}</td>
       <td><button class="btn deleteButton btn-warning">Delete</button></td>
+      <td><button class="btn completeButton btn-secondary">Undo</button></td>
     </tr>
    
   `);
@@ -114,7 +115,8 @@ function deleteTask() {
 
 function completeTask() {
   let taskIdToUpdate = $(this).closest("tr").data("id");
-  let completeStatus = $(this).data('complete');
+  let completeStatus = $(this).closest("tr").data("complete");
+  console.log(completeStatus);
   $.ajax({
     method: "PUT",
     url: `/tasks/${taskIdToUpdate}`,
