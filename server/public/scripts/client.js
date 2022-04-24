@@ -71,7 +71,7 @@ function renderTasks(tasks) {
     if ((task.complete === true)) {
       $("#taskList").append(`
     
-    <tr class="complete level${task.importance}" data-id=${task.id} >
+    <tr class="complete level${task.importance}" data-id=${task.id} data-complete=${task.complete}>
       <td>${task.task}</td>
       <td>${task.dueDate}</td>
       <td>${task.description}</td>
@@ -82,7 +82,7 @@ function renderTasks(tasks) {
     } else if ((task.complete === false)) {
       $("#taskList").append(`
     
-  <tr class="incomplete level${task.importance}" data-id=${task.id}>
+  <tr class="incomplete level${task.importance}" data-id=${task.id} data-complete=${task.complete}>
     <td>${task.task}</td>
     <td>${task.dueDate}</td>
     <td>${task.description}</td>
@@ -114,9 +114,11 @@ function deleteTask() {
 
 function completeTask() {
   let taskIdToUpdate = $(this).closest("tr").data("id");
+  let completeStatus = $(this).data('complete');
   $.ajax({
     method: "PUT",
     url: `/tasks/${taskIdToUpdate}`,
+    data: {newComplete: !completeStatus}
   })
     .then(function (response) {
       console.log(response);
