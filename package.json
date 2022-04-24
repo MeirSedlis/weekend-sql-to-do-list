@@ -1,0 +1,26 @@
+{
+  "name": "weekend-sql-to-do-list",
+  "version": "1.0.0",
+  "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeirSedlis/weekend-sql-to-do-list.git"
+  },
+  "author": "MeirSedlis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeirSedlis/weekend-sql-to-do-list/issues"
+  },
+  "homepage": "https://github.com/MeirSedlis/weekend-sql-to-do-list#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "bootstrap": "^3.4.1",
+    "express": "^4.17.3",
+    "pg": "^8.7.3"
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="/vendors/jquery.js"></script>
+    <script src="/scripts/client.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css"> 
+    <title>To-Do To-Day</title>
+</head>
+<body>
+<div class="container">
+ <div class="page-header">  
+    <h1>Meir's Fantastic To Do App!</h1>
+    </div>
+
+    </div>
+    <div class="jumbotron">
+        <input id="taskInput" type="text" placeholder="Task">
+        <input id="dueInput" type="date" placeholder="Due Date">
+        <select id="importanceInput">
+            <option value="1">Low Importance</option>
+            <option value="2">Moderate Importance</option>
+            <option value="3">High Importance</option>
+        <input id="descriptionInput" type="text" placeholder="Description">
+        <button class="btn btn-primary" id="addTaskButton">Add Task</button>
+        </div>
+    <section>
+        <div>
+          <h3>Tasks</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Due Date</th>
+                <th>Description</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="taskList">
+            </tbody>
+          </table>
+        </div>
+      </section>
+<footer>
+    <p>Meir Sedlis 2022 All Rights Reserved</p>
+ <a href="mailto:meirsedlis@gmail.com?subject=to%do%app">Contact</a>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
