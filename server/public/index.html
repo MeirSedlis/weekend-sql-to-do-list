@@ -15,7 +15,6 @@
  <div class="page-header">  
     <h1>Meir's Fantastic To Do App!</h1>
     </div>
-
     </div>
     <div class="jumbotron">
         <input id="taskInput" type="text" placeholder="Task">
@@ -30,13 +29,14 @@
     <section>
         <div>
           <h3>Tasks</h3>
-          <table>
-            <thead>
+          <table class="table table-sm">
+            <thead class="thead-dark">
               <tr>
                 <th>Task</th>
                 <th>Due Date</th>
                 <th>Description</th>
-                <th>Actions</th>
+                <th>Delete</th>
+                <th>Complete</th>
               </tr>
             </thead>
             <tbody id="taskList">
