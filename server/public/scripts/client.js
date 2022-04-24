@@ -4,6 +4,7 @@ function onReady() {
   console.log("jq");
   listenForClicks();
   refreshTasks();
+  randomBackgroundGenerator();
 }
 
 // put click handlers here
@@ -11,6 +12,7 @@ function listenForClicks() {
   $(document).on("click", "#addTaskButton", submit);
   $(document).on("click", ".deleteButton", deleteTask);
   $(document).on("click", ".completeButton", completeTask);
+  $(document).on("click", "#inspire", randomBackgroundGenerator);
 }
 
 // grab input vals and create object to feed to addTask
@@ -21,10 +23,9 @@ function submit() {
     dueDate: $("#dueInput").val(),
     importance: $("#importanceInput").val(),
     description: $("#descriptionInput").val(),
-    complete: false
+    complete: false,
   };
-  $('input').val(''),
-  console.log("Created task:", newTask);
+  $("input").val(""), console.log("Created task:", newTask);
   addTask(newTask);
 }
 
@@ -68,10 +69,10 @@ function refreshTasks() {
 function renderTasks(tasks) {
   $("#taskList").empty();
   for (let task of tasks) {
-    if ((task.complete === true)) {
+    if (task.complete === true) {
       $("#taskList").append(`
     
-    <tr class="complete level${task.importance}" data-id=${task.id} data-complete=${task.complete}>
+    <tr class="table-secondary complete level${task.importance}" data-id=${task.id} data-complete=${task.complete}>
       <td>${task.task}</td>
       <td>${task.dueDate}</td>
       <td>${task.description}</td>
@@ -80,10 +81,10 @@ function renderTasks(tasks) {
     </tr>
    
   `);
-    } else if ((task.complete === false)) {
+    } else if (task.complete === false) {
       $("#taskList").append(`
     
-  <tr class="incomplete level${task.importance}" data-id=${task.id} data-complete=${task.complete}>
+  <tr class="table-light level${task.importance}" data-id=${task.id} data-complete=${task.complete}>
     <td>${task.task}</td>
     <td>${task.dueDate}</td>
     <td>${task.description}</td>
@@ -120,7 +121,7 @@ function completeTask() {
   $.ajax({
     method: "PUT",
     url: `/tasks/${taskIdToUpdate}`,
-    data: {newComplete: !completeStatus}
+    data: { newComplete: !completeStatus },
   })
     .then(function (response) {
       console.log(response);
@@ -129,4 +130,22 @@ function completeTask() {
     .catch(function (error) {
       console.log(error);
     });
+}
+
+function randomBackgroundGenerator() {
+  var bgm = [
+    "/images/IMG_1673.jpeg",
+    "/images/IMG_3003.jpeg",
+    "/images/IMG_3032.jpeg",
+    "/images/IMG_6190.jpeg",
+    "/images/IMG_6248.jpeg",
+    "/images/IMG_6251.jpeg",
+    "/images/IMG_6770.jpeg",
+    "/images/IMG_6772.jpeg",
+  ];
+  $('.random_bg').css({
+    'background' : 'url('+ bgm[Math.floor(Math.random() * bgm.length)] + ') no-repeat',
+    'background-position' : '100%',
+    'background-size' : 'cover'
+});
 }

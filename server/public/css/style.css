@@ -1,46 +1,51 @@
-body{
-    background-color: grey;
-    text-align: center;
+body {
+  background-color: #fcfff7;
+  text-align: center;
+  margin: 0;
+}
+.page-header{
+  background-color: rgba(211, 211, 211, 0.558);
+}
+@font-face {
+  font-family: "bright";
+  src: url(Bright.otf) format("opentype");
 }
 
-.complete{
-    font-style: italic;
-    text-decoration: line-through;
+.display-1 {
+  font-family: "bright";
+  color: #023047;
+}
+
+.display-4 {
+  color: #046865;
+}
+
+.complete {
+  text-decoration: line-through;
 }
 
 .level3 {
-    position: relative;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    color: #842029;
-  background-color: #f8d7da;
+  font-weight: bold;
 }
 
-.level2{
-    position: relative;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    color: #664d03;
-  background-color: #fff3cd;
+.level2 {
+  font-style: italic;
 }
 
-.level1{
-    position: relative;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    color: #055160;
-  background-color: #cff4fc
+footer {
+  font-size: 8px;
+  padding-top: 300px;
 }
 
+.btn-danger {
+  background-color: #e53d00;
+}
 
+.btn-warning {
+  background-color: #ffe900;
+  border-color: #d4c201;
+}
 
-footer{
-    font-size: 8px;
-    padding-top: 200px;
+.btn-success {
+  background-color: #21a078;
 }
