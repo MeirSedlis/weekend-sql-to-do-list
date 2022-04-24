@@ -74,9 +74,8 @@ function renderTasks(tasks) {
     <tr class="complete level${task.importance}" data-id=${task.id} >
       <td>${task.task}</td>
       <td>${task.dueDate}</td>
-      <td>${task.importance}</td>
       <td>${task.description}</td>
-      <td><button class="deleteButton completeDelete">Delete Task</button></td>
+      <td><button class="btn deleteButton btn-warning">Delete</button></td>
     </tr>
    
   `);
@@ -86,10 +85,9 @@ function renderTasks(tasks) {
   <tr class="incomplete level${task.importance}" data-id=${task.id}>
     <td>${task.task}</td>
     <td>${task.dueDate}</td>
-    <td>${task.importance}</td>
     <td>${task.description}</td>
-    <td><button class="deleteButton">Delete Task</button></td>
-    <td><button class="completeButton">Mark Complete</button></td>
+    <td><button class="btn deleteButton btn-danger">Delete</button></td>
+    <td><button class="btn completeButton btn-success">Complete</button></td>
   </tr>
  
 `);
