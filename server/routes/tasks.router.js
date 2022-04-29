@@ -3,7 +3,7 @@ const router = express.Router();
 
 const pool = require("../modules/pool");
 
-// GET
+// GET 
 router.get("/", (req, res) => {
   let queryText = 'SELECT * FROM "tasks" ORDER BY "dueDate";';
   pool
